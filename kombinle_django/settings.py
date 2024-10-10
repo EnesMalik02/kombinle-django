@@ -37,7 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'user_datas.apps.MyappConfig',  # Uygulamanızın adını ve config sınıfını buraya ekleyin
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -51,10 +53,11 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'kombinle_django.urls'
 
+# myproject/settings.py
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],  # Projenin ana dizinindeki templates klasörünü kullanıyoruz
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -66,6 +69,8 @@ TEMPLATES = [
         },
     },
 ]
+
+
 
 WSGI_APPLICATION = 'kombinle_django.wsgi.application'
 

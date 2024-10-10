@@ -1,0 +1,23 @@
+<!-- templates/search_statistics.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Arama İstatistikleri</title>
+</head>
+<body>
+    <h1>{{ country }} - {{ age }} Yaş - {{ gender }} Cinsiyet için En Çok Aranan Kelimeler</h1>
+
+    <table border="1">
+        <tr>
+            <th>Arama Kelimesi</th>
+            <th>Arama Sayısı</th>
+        </tr>
+        {% for result in search_results %}
+        <tr>
+            <td>{{ result.search_term }}</td>
+            <td>{{ result.count }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
